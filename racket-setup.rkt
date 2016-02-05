@@ -6,6 +6,7 @@
 (define pkgs '("scribble"
                "typed-racket"
                "gui"
+               "drracket"
                "redex"
                "readline"
                "compiler"
