@@ -88,7 +88,8 @@
                "point-free"
                "adapton"
                ;"github"
-               "github-api"))
+               "github-api"
+               "acmsmall"))
 (define planet-pkgs '("jowalsh/code-coverage"
                       ;"dyoo/bf"
                       "neil/scribble-emacs"
