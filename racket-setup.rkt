@@ -44,7 +44,7 @@
                "tzinfo"
                "tzdata"
                "gregor"
-               "ppict"
+               "ppict3d"
                "python"
                ;"c"
                "c-utils"
