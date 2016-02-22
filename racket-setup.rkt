@@ -29,6 +29,7 @@
                "minikanren"
                "glob"
                "parsack"
+               "generic-bind"
                "markdown"
                "zordoz"
                "slideshow-pretty"
