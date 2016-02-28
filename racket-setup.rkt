@@ -1,7 +1,10 @@
 #lang racket
 
 (require compiler/find-exe
-         pkg/lib)
+         pkg/lib
+         racket/runtime-path)
+
+(define-runtime-path git (find-executable-path "git"))
 
 (define pkgs '("scribble"
                "typed-racket"
@@ -96,6 +99,7 @@
                       ;"dyoo/bf"
                       "neil/scribble-emacs"
                       "neil/csv:1:=7"))
+(define git-pkgs '(("rosette" "https://github.com/emina/rosette" "rosette/rosette")))
 
 (parameterize ([current-directory "/Users/leif/rsrc"])
   (for ([i (in-list pkgs)])
@@ -108,4 +112,12 @@
           [else
            (system* (find-exe) "-l" "raco" "pkg" "install" "--deps" "search-auto" "--clone" i)]))
   (for ([i (in-list planet-pkgs)])
-    (system* (find-exe) "-e" (format "(require (planet ~a))" i))))
+    (system* (find-exe) "-e" (format "(require (planet ~a))" i)))
+  (for ([i (in-list git-pkgs)])
+    (match i
+      [(name repo subfolder)
+       (unless (hash-has-key? (installed-pkg-table) i)
+         (system* git "clone" repo)
+         (parameterize ([current-directory subfolder])
+           (system* (find-exe) "-l" "raco" "pkg" "install"))]))))
+
