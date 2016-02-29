@@ -115,9 +115,9 @@
     (system* (find-exe) "-e" (format "(require (planet ~a))" i)))
   (for ([i (in-list git-pkgs)])
     (match i
-      [(name repo subfolder)
+      [`(,name ,repo ,subfolder)
        (unless (hash-has-key? (installed-pkg-table) i)
          (system* git "clone" repo)
          (parameterize ([current-directory subfolder])
-           (system* (find-exe) "-l" "raco" "pkg" "install"))]))))
+           (system* (find-exe) "-l" "raco" "pkg" "install")))])))
 
