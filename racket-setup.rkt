@@ -94,7 +94,8 @@
                "adapton"
                ;"github"
                "github-api"
-               "acmsmall"))
+               "acmsmall"
+               "racketeer"))
 (define planet-pkgs '("jowalsh/code-coverage"
                       ;"dyoo/bf"
                       "neil/scribble-emacs"
