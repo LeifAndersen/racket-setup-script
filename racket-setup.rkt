@@ -48,8 +48,8 @@
                "tzinfo"
                "tzdata"
                "gregor"
-               "pict3d"
-               "opengl"
+               ;"pict3d"
+               ;"opengl"
                "python"
                ;"c"
                "c-utils"
@@ -109,7 +109,7 @@
              [(struct* pkg-info ([orig-pkg `(clone ,_ ,_)]))
               (system* (find-exe) "-l" "raco" "pkg" "update" "--deps" "search-auto" i)]
              [else
-              (system* (find-exe) "-l" "raco" "pkg" "update" "--deps" "search-auto" "--multi-cone" "convert" "--clone" i)])]
+              (system* (find-exe) "-l" "raco" "pkg" "update" "--deps" "search-auto" "--multi-clone" "convert" "--clone" i)])]
           [else
            (system* (find-exe) "-l" "raco" "pkg" "install" "--deps" "search-auto" "--multi-clone" "convert" "--clone" i)]))
   (for ([i (in-list planet-pkgs)])
