@@ -109,9 +109,9 @@
              [(struct* pkg-info ([orig-pkg `(clone ,_ ,_)]))
               (system* (find-exe) "-l" "raco" "pkg" "update" "--deps" "search-auto" i)]
              [else
-              (system* (find-exe) "-l" "raco" "pkg" "update" "--deps" "search-auto" "--clone" i)])]
+              (system* (find-exe) "-l" "raco" "pkg" "update" "--deps" "search-auto" "--multi-cone" "convert" "--clone" i)])]
           [else
-           (system* (find-exe) "-l" "raco" "pkg" "install" "--deps" "search-auto" "--clone" i)]))
+           (system* (find-exe) "-l" "raco" "pkg" "install" "--deps" "search-auto" "--multi-clone" "convert" "--clone" i)]))
   (for ([i (in-list planet-pkgs)])
     (system* (find-exe) "-e" (format "(require (planet ~a))" i)))
   (for ([i (in-list git-pkgs)])
