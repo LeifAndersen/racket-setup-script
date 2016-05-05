@@ -1,6 +1,7 @@
 #lang racket
 
 (require compiler/find-exe
+         pkg
          pkg/lib
          racket/runtime-path)
 
@@ -118,11 +119,11 @@
     (cond [(hash-has-key? (installed-pkg-table) i)
            (match (hash-ref (installed-pkg-table) i)
              [(struct* pkg-info ([orig-pkg `(clone ,_ ,_)]))
-              (system* (find-exe) "-l" "raco" "pkg" "update" "--deps" "search-auto" i)]
+              (pkg-update-command #:deps 'search-auto i)]
              [else
-              (system* (find-exe) "-l" "raco" "pkg" "update" "--deps" "search-auto" "--multi-clone" "convert" "--clone" i)])]
+              (pkg-update-command #:deps 'search-auto #:multi-clone 'convert #:clone #t i)])]
           [else
-           (system* (find-exe) "-l" "raco" "pkg" "install" "--deps" "search-auto" "--multi-clone" "convert" "--clone" i)]))
+           (pkg-install-command #:deps 'search-auto #:multi-clone 'convert #:clone #t i)]))
   (for ([i (in-list planet-pkgs)])
     (system* (find-exe) "-e" (format "(require (planet ~a))" i)))
   (for ([i (in-list git-pkgs)])
@@ -139,4 +140,4 @@
          [else
           (system* git "clone" repo)
           (parameterize ([current-directory subfolder])
-            (system* (find-exe) "-l" "raco" "pkg" "install" "-n" name))])])))
+            (pkg-install-command #:name name))])])))
