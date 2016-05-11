@@ -8,4 +8,4 @@
  "d:s:i"
  (λ (editor event)
    (define name (send editor get-filename))
-   (system* open "-a" "emacs" name)))
+   (when name (system* open "-a" "emacs" name))))

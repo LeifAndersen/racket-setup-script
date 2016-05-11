@@ -36,7 +36,7 @@
                "parsack"
 ;               "generic-bind"
                "markdown"
-;               "zordoz"
+               "zordoz"
 ;               "slideshow-pretty"
 ;               "slideshow-latex"
                "slideshow-repl"
@@ -52,7 +52,7 @@
                "gregor"
 ;               ;"pict3d"
                "opengl"
-;               "python"
+               "python"
 ;               ;"c"
 ;               "c-utils"
 ;               "c-defs"
@@ -63,9 +63,9 @@
                "dlm-read"
                "drracket-vim-tool"
                "feature-profile"
-;               "fulmar"
-;               "irc"
-;               "irc-client"
+               "fulmar"
+               "irc"
+               "irc-client"
 ;               "racket-cheat"
 ;               "puresuri"
 ;               "python-tokenizer"
@@ -114,16 +114,17 @@
                   ("sdl" "git@github.com:cosmez/racket-sdl.git" "racket-sdl/sdl")
                    ))
 
-(parameterize ([current-directory "/Users/leif/rsrc"])
+(parameterize ([current-directory "/Users/leif/rsrc"]
+               [current-input-port (open-input-bytes #"")])
   (for ([i (in-list pkgs)])
     (cond [(hash-has-key? (installed-pkg-table) i)
            (match (hash-ref (installed-pkg-table) i)
              [(struct* pkg-info ([orig-pkg `(clone ,_ ,_)]))
               (pkg-update-command #:deps 'search-auto i)]
              [else
-              (pkg-update-command #:deps 'search-auto #:multi-clone 'convert #:clone #t i)])]
+              (pkg-update-command #:deps 'search-auto #:multi-clone 'convert #:clone i i)])]
           [else
-           (pkg-install-command #:deps 'search-auto #:multi-clone 'convert #:clone #t i)]))
+           (pkg-install-command #:deps 'search-auto #:multi-clone 'convert #:clone i i)]))
   (for ([i (in-list planet-pkgs)])
     (system* (find-exe) "-e" (format "(require (planet ~a))" i)))
   (for ([i (in-list git-pkgs)])
