@@ -7,13 +7,13 @@
 
 (define-runtime-path git (find-executable-path "git"))
 
-(define pkgs '(;"scribble"
-;               "typed-racket"
+(define pkgs '("scribble"
+               "typed-racket"
 ;               "gui"
 ;               "drracket"
 ;               "redex"
 ;               "readline"
-;               "compiler"
+               "compiler"
 ;               "slideshow"
 ;               "xrepl"
                "plot"
@@ -105,7 +105,7 @@
                "java-lexer"
                "r-lexer"
                ))
-(define planet-pkgs '(;"jowalsh/code-coverage"
+(define planet-pkgs '("jowalsh/code-coverage"
                       ;"dyoo/bf"
                       ;"neil/scribble-emacs"
                       ;"neil/csv:1:=7"
