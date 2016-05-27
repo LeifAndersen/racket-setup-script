@@ -107,14 +107,18 @@
                "binary-class"
                "bitsyntax"
                "cur"
+               "sudo"
+               "rosette"
+               "webapi"
+               "google"
+               "request"
                ))
 (define planet-pkgs '("jowalsh/code-coverage"
                       ;"dyoo/bf"
                       ;"neil/scribble-emacs"
                       ;"neil/csv:1:=7"
                       ))
-(define git-pkgs '(("rosette" "https://github.com/emina/rosette" "rosette/rosette")
-                  ("sdl" "git@github.com:cosmez/racket-sdl.git" "racket-sdl/sdl")
+(define git-pkgs '(("sdl" "git@github.com:cosmez/racket-sdl.git" "racket-sdl/sdl")
                    ))
 
 (parameterize ([current-directory "/Users/leif/rsrc"]
