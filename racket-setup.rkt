@@ -13,7 +13,6 @@
                "drracket"
                "redex"
                "readline"
-               "compiler"
                "slideshow"
                "xrepl"
                "plot"
