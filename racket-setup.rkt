@@ -48,6 +48,7 @@
                "plt-web"
                "pkg-index"
                "nanopass"
+               "gregor"
                "distro-build"
                "reloadable"
 ;               "aws"
@@ -72,7 +73,6 @@
                "cow-repl"
 ;               "tzinfo"
 ;               "tzdata"
-               "gregor"
 ;               ;"pict3d"
                "opengl"
                "python"
@@ -161,6 +161,7 @@
                "struct-update"
                "lens"
                "mutt"
+               "doodle"
                ))
 (define planet-pkgs '("jowalsh/code-coverage"
                       ;"dyoo/bf"
