@@ -173,7 +173,7 @@
 (define git-pkgs '(;("sdl" "git@github.com:cosmez/racket-sdl.git" "racket-sdl/sdl")
                    ))
 
-(parameterize ([current-directory "/Users/leif/rsrc"]
+(parameterize ([current-directory (build-path (find-system-path 'home-dir) "rsrc")]
                [current-input-port (open-input-bytes #"")])
   (for ([i (in-list pkgs)])
     (cond [(hash-has-key? (installed-pkg-table) i)
