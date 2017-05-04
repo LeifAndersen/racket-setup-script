@@ -164,6 +164,7 @@
                ;"lens"
                "mutt"
                "doodle"
+               "scratch"
                ))
 (define planet-pkgs '("jowalsh/code-coverage"
                       ;"dyoo/bf"
