@@ -163,6 +163,7 @@
                ;"struct-update"
                ;"lens"
                "mutt"
+               "turnstile"
                "doodle"
                "scratch"
                ))
