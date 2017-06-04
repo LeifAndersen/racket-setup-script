@@ -96,6 +96,7 @@
                "quickcheck"
 ;               "superc"
                "sweet-exp"
+               "portaudio"
                "rsound"
 ;               "syntax-lang"
                ;"remote-shell"
