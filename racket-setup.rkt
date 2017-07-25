@@ -125,8 +125,6 @@
 ;               "adapton"
 ;               ;"github"
 ;               "github-api"
-               "acmsmall"
-               "acmart"
                "classicthesis-scribble"
                "rsvg"
 ;               "racketeer"
