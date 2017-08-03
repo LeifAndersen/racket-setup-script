@@ -151,7 +151,7 @@
                "derp-3"
                "drdr"
                "ecmascript"
-               "wart"
+               ;"wart"
               ;"elf"
                "explorer"
                "exact-decimal-lang"
