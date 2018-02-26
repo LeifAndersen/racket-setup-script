@@ -163,7 +163,6 @@
               ;"elf"
                "explorer"
                "exact-decimal-lang"
-               "reloadable"
                ;"hamt"
                "midi-readwrite"
                "minipascal"
