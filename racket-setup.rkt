@@ -30,6 +30,7 @@
                "slideshow"
                "xrepl"
                "lazy"
+               "macro-debugger"
                "htdp"
                "plai"
                "memoize"
