@@ -68,7 +68,7 @@
                "parsack"
 ;               "generic-bind"
                "markdown"
-               "zordoz"
+               ;"zordoz"
 ;               "slideshow-pretty"
                "slideshow-latex"
                "slideshow-repl"
