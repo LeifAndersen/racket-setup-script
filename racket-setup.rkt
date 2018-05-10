@@ -174,6 +174,7 @@
                "doodle"
                "scratch"
                "reprovide-lang"
+               "yaml"
                ))
 (define planet-pkgs '("jowalsh/code-coverage"
                       ;"dyoo/bf"
