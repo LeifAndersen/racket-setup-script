@@ -175,6 +175,8 @@
                "scratch"
                "reprovide-lang"
                "yaml"
+               "libuuid"
+               ;"javascript"
                ))
 (define planet-pkgs '("jowalsh/code-coverage"
                       ;"dyoo/bf"
